@@ -16,7 +16,8 @@ module.exports.hello = async (event, context) => {
 };
 
 module.exports.getaccountbalance = async (event, context) => {
-  var balance = await GetBalance.get_balance_for_user('test');
+  //TODO: connect to cognito
+  var balance = await GetBalance.get_balance_for_user('A1-at-yoman.io');
 
   return {
     statusCode: 200,

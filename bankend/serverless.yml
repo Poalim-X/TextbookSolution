@@ -71,6 +71,10 @@ functions:
     handler: handler.hello
   getaccountbalance:
     handler: handler.getaccountbalance
+    environment:
+      NEO4J_USER: ${env:NEO4J_USER}
+      NEO4J_PASSWORD: ${env:NEO4J_PASSWORD}
+      NEO4J_ENDPOINT: ${env:NEO4J_ENDPOINT}
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
