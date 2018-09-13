@@ -1,0 +1,10 @@
+language: node_js
+node_js: "node"
+deploy:
+  - provider: s3
+    bucket: "poalim-x-fabolous-bank"
+    skip_cleanup: true
+    region: "us-east-1"
+    local_dir: webapp
+    on:
+            all_branches: true

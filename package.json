@@ -1,0 +1,14 @@
+{
+  "name": "fabolous-bank",
+  "version": "0.1.0",
+  "description": "fabolous bank app",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poalim-X/TextbookSolution.git"
+  },
+  "author": "PoalimX",
+  "license": "ISC"
+}
