@@ -1,0 +1,10 @@
+{
+  "name": "fabolous-bank-end",
+  "version": "0.1.0",
+  "description": "fabolous bank backend",
+  "dependencies": {
+    "neo4j-driver": "latest"
+  },
+  "author": "PoalimX",
+  "license": "ISC"
+}

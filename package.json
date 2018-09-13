@@ -6,7 +6,8 @@
     "test": "exit 0"
   },
   "dependencies": {
-    "serverless": "latest"
+    "serverless": "latest",
+    "serverless-plugin-include-dependencies": "latest"
   },
   "repository": {
     "type": "git",

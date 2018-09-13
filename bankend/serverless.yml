@@ -53,10 +53,24 @@ provider:
 #  exclude:
 #    - exclude-me.js
 #    - exclude-me-dir/**
+package:
+  individually: true
+  exclude:
+    - node_modules/**
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+custom:
+  includeDependencies:
+    always:
+      - 'src/**' # (optional) always include these globs and their dependencies
 
 functions:
   hello:
     handler: handler.hello
+  getaccountbalance:
+    handler: handler.getaccountbalance
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
