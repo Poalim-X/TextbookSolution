@@ -8,3 +8,7 @@ deploy:
     local_dir: webapp
     on:
             all_branches: true
+  - provider: script
+    script: bash ci/deploy.sh
+    on:
+            all_branches: true
