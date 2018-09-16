@@ -9,6 +9,8 @@ function loadLoginInfo() {
         if (token) {
             authToken = token;
             $('.authToken').text(token);
+            ensureUserExists(); // in background, ensure the user
+            // acct exists in the neo4j db.
         } else {
             window.location.href = '/index.html';
         }
@@ -44,8 +46,34 @@ function successGetBalance(result) {
     alert("Your balance is " + result.CurrentBalance);
 }
 
+// ensure an account exists
+function ensureUserExists() {
+    console.log("ensuring user exists with token " + authToken);
+    $.ajax({
+        method: 'POST',                     
+        url: _config.api.invokeUrl + "/ensureuserexists",           
+        headers: {
+            Authorization: authToken
+        },
+        contentType: 'application/json',
+        success: successEnsureUserExists,
+        error: function ajaxError(jqXHR, textStatus, errorThrown) {
+        console.error('Error ensuring user exists: ', textStatus, ', Details: ', errorThrown);
+        console.error('Response: ', jqXHR.responseText);
+        alert('error ensuring user exists ' + jqXHR.responseText);
+        }
+    });
+}
+
+// show result after JSON returns
+function successEnsureUserExists(result) {
+    console.log("ensure user exists finished. result: ")
+    console.log(result);
+}
+
 // handle auth if in system - useful when refreshing page to reload token.
 if  ((window.location.href.indexOf("bank-system-logged-in") > -1)) {
     console.log("logged in screen, loading auth creds");
     loadLoginInfo();
+
 }
