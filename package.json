@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "description": "fabolous bank app",
   "scripts": {
+    "start": "http-server webapp",
     "test": "bash ci/test.sh"
   },
   "dependencies": {
+    "http-server": "latest",
     "serverless": "latest",
     "serverless-plugin-include-dependencies": "latest",
     "jasmine": "latest"

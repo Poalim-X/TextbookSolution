@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html dir="rtl">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ברוך הבא לבנק המופלאים</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
 <body>
+<!-- Start of first page: #one -->
+<div data-role="page" id="bank-welcome">
 
-<h1>Test Page</h1>
+	<div data-role="header">
+		<h1>בנק המופלאים</h1>
+	</div><!-- /header -->
 
-<p>Welcome to the fabolous bank.</p>
+	<div role="main" class="ui-content">
+		<h2>ברוכים הבאים לבנק המופלאים</h2>
+
+		<p>בעזרת מערכת זו תוכלו להתחבר ולקבל את שירותי הבנק.</p>
+
+		<h3>מה ברצונך לעשות?</h3>
+		<p><a href="#bank-about" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">אודות בנק המופלאים</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="a">
+		<h4>בנק המופלאים</h4>
+	</div><!-- /footer -->
+</div><!-- /page one -->
+
+<div data-role="page" id="bank-about">
+	<div data-role="header" data-theme="b">
+		<h1>פרטים על הבנק</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>אודות בנק המופלאים</h2>
+		<p>בנק הילדים הוא בנק חדש בישראל
+		<p><a href="#bank-welcome" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">חזרה</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>בנק המופלאים</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
 
 </body>
 </html>
+
