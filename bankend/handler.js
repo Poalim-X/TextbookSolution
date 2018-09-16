@@ -18,6 +18,16 @@ function getCognitoUser(event, context) {
 
 }
 
+function buildReturnJSON(status,body) {
+  return {
+    statusCode: status,
+    headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+    },
+    body: body
+  };
+}
 module.exports.hello = async (event, context) => {
   return {
     statusCode: 200,
@@ -35,16 +45,36 @@ module.exports.getaccountbalance = async (event, context) => {
   var username = getCognitoUser(event, context);
   var balance = await Account.get_balance_for_user(username);
 
-  return {
-    statusCode: 200,
-    headers: {
-        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
-    },
-    body: JSON.stringify({
+  return buildReturnJSON(
+    200, 
+    JSON.stringify({
       input: event,
       username: username,
       CurrentBalance: balance,
-    }),
-  };
+    })
+  );
+};
+
+module.exports.ensureuserexists = async (event, context) => {
+  var username = getCognitoUser(event, context);
+  var account = await Account.ensure_account_exists(username);
+
+  if (account == null) {
+    return buildReturnJSON(
+      500,
+      JSON.stringify({
+        input: event,
+        username: username,
+        msg: "could not ensure user exists"
+      })
+    )
+  } else {
+    return buildReturnJSON(
+      200,
+      JSON.stringify({
+        input: event,
+        username: username,
+      })
+    );
+  }
 };

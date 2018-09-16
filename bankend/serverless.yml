@@ -20,6 +20,10 @@ service: bankend # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs8.10
+  environment:
+    NEO4J_USER: ${env:NEO4J_USER}
+    NEO4J_PASSWORD: ${env:NEO4J_PASSWORD}
+    NEO4J_ENDPOINT: ${env:NEO4J_ENDPOINT}
 
 # you can overwrite defaults here
 #  stage: dev
@@ -68,12 +72,18 @@ custom:
 functions:
   hello:
     handler: handler.hello
+  ensureuserexists:
+    handler: handler.ensureuserexists
+    events:
+      - http:
+          path: ensureuserexists
+          method: post
+          cors: true
+          authorizer:
+            name: authorizer
+            arn: arn:aws:cognito-idp:us-east-1:519681319283:userpool/us-east-1_bwrXekQiO
   getaccountbalance:
     handler: handler.getaccountbalance
-    environment:
-      NEO4J_USER: ${env:NEO4J_USER}
-      NEO4J_PASSWORD: ${env:NEO4J_PASSWORD}
-      NEO4J_ENDPOINT: ${env:NEO4J_ENDPOINT}
     events:
       - http:
           path: getaccountbalance
