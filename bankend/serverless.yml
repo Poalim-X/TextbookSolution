@@ -54,7 +54,6 @@ provider:
 #    - exclude-me.js
 #    - exclude-me-dir/**
 package:
-  individually: true
   exclude:
     - node_modules/**
 
