@@ -2,6 +2,22 @@
 
 const GetBalance = require('./getbalance');
 
+function getCognitoUser(event, context) {
+  if (!event.requestContext.authorizer) {
+        console.log("error in auth");
+        return null;
+  }
+
+  // Because we're using a Cognito User Pools authorizer, all of the claims
+  // included in the authentication token are provided in the request context.
+  // This includes the username as well as other attributes.
+  var callingUsername = event.requestContext.authorizer.claims['cognito:username'];
+
+  console.log("getCognitoUser=" + callingUsername);
+  return callingUsername;
+
+}
+
 module.exports.hello = async (event, context) => {
   return {
     statusCode: 200,
@@ -16,14 +32,19 @@ module.exports.hello = async (event, context) => {
 };
 
 module.exports.getaccountbalance = async (event, context) => {
-  //TODO: connect to cognito
-  var balance = await GetBalance.get_balance_for_user('A1-at-yoman.io');
+  var username = getCognitoUser(event, context);
+  var balance = await GetBalance.get_balance_for_user(username);
 
   return {
     statusCode: 200,
+    headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+    },
     body: JSON.stringify({
-      message: 'You are fabolous! ' + balance ,
       input: event,
+      username: username,
+      CurrentBalance: balance,
     }),
   };
 };
