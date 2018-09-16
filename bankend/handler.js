@@ -1,6 +1,6 @@
 'use strict';
 
-const GetBalance = require('./getbalance');
+const Account = require('./account');
 
 function getCognitoUser(event, context) {
   if (!event.requestContext.authorizer) {
@@ -33,7 +33,7 @@ module.exports.hello = async (event, context) => {
 
 module.exports.getaccountbalance = async (event, context) => {
   var username = getCognitoUser(event, context);
-  var balance = await GetBalance.get_balance_for_user(username);
+  var balance = await Account.get_balance_for_user(username);
 
   return {
     statusCode: 200,
