@@ -57,9 +57,8 @@ function ensureUserExists() {
         contentType: 'application/json',
         success: successEnsureUserExists,
         error: function ajaxError(jqXHR, textStatus, errorThrown) {
-        console.error('Error ensuring user exists: ', textStatus, ', Details: ', errorThrown);
-        console.error('Response: ', jqXHR.responseText);
-        alert('error ensuring user exists ' + jqXHR.responseText);
+        console.error('Error ensuring user exists: ', textStatus, ', Details: ', errorThrown
+                    + " resp text: " + jqXHR.responseText);
         }
     });
 }

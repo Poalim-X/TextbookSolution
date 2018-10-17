@@ -32,7 +32,6 @@ async function userExists(session, username)
 async function createUser(session, username)
 {
     const result = await session.run("CREATE (n:User {name:'"+username+"', balance: "+INITIAL_BALANCE+" }) RETURN n");
-
     return result;
 }
 
@@ -60,9 +59,13 @@ module.exports.get_balance_for_user = async (username) => {
 module.exports.ensure_account_exists = async (username) => {
     var driver = getNeo4jDriver();
     const session = driver.session();
-    var result = null;
+    var result = null; // null if had problem creating user.
     if (!await userExists(session, username)) {
         result = await createUser(session, username);
+    }
+    else
+    {
+        result = "OK"; // not null, means success.       
     }
 
     session.close();

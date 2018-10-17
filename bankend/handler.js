@@ -57,9 +57,9 @@ module.exports.getaccountbalance = async (event, context) => {
 
 module.exports.ensureuserexists = async (event, context) => {
   var username = getCognitoUser(event, context);
-  var account = await Account.ensure_account_exists(username);
+  var result = await Account.ensure_account_exists(username);
 
-  if (account == null) {
+  if (result == null) {
     return buildReturnJSON(
       500,
       JSON.stringify({
