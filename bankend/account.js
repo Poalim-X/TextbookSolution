@@ -64,6 +64,10 @@ module.exports.ensure_account_exists = async (username) => {
     if (!await userExists(session, username)) {
         result = await createUser(session, username);
     }
+    else
+    {
+        result = "OK"; // not null - OK - successful.
+    }
 
     session.close();
     driver.close();
