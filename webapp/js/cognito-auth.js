@@ -119,7 +119,8 @@ var BankApp = window.BankApp || {};
         event.preventDefault();
         signin(email, password,
             function signinSuccess() {
-                console.log('Successfully Logged In');                
+                console.log('Successfully Logged In');
+                loadLoginInfo(); // load login token after sign in                
                 window.location.href = 'index.html#bank-system-logged-in';
             },
             function signinError(err) {
