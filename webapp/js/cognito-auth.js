@@ -144,7 +144,7 @@ var BankApp = window.BankApp || {};
             }
         };
         var onFailure = function registerFailure(err) {
-            alert(err);
+            alert(err.message);
         };
         event.preventDefault();
 
