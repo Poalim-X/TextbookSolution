@@ -2,7 +2,7 @@ language: node_js
 node_js: "node"
 deploy:
   - provider: s3
-    bucket: "poalim-x-fabolous-bank"
+    bucket: "poalimx"
     skip_cleanup: true
     region: "us-east-1"
     local_dir: webapp
