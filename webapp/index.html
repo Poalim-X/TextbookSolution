@@ -52,30 +52,30 @@
 
 	<!------------------------------------ form -----------------------------------------------------------------------!-->
 	<div data-role="page" id="bank-login" data-theme="a">
-
+	
 		<div data-role="header">
 			<h1>התחברות לבנק</h1>
 		</div><!-- /header -->
-
+	
 		<div role="main" class="ui-content">
 			<h2>אנא הכנס את פרטיך</h2>
 			<form id="login-form">
-				<label for="login-email">דואר אלקטרוני</label>
-				<input type="text" name="login-email" id="login-email" value="">
-
-				<label for="login-password">סיסמא</label>
-				<input type="password" name="login-password" id="login-password" value="" autocomplete="off">
-				<p><input type="submit" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b" value="כניסה למערכת"></input></p>
+				<div class="content-inputs">
+					<div class="content-input">
+						<label for="login-email">דואר אלקטרוני</label>
+						<input type="text" name="login-email" id="login-email" value="">
+					</div>
+					<div class="content-input">
+						<label for="login-password">סיסמא</label>
+						<input type="password" name="login-password" id="login-password" value="" autocomplete="off">
+					</div>
+				</div>
+				<div class="buttons">
+					<button type="submit" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all">כניסה למערכת</button>
+					<a href="#bank-welcome" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">חזרה לדף הראשי</a>
+				</div>
 			</form>
-
-			<p><a href="#bank-welcome" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">חזרה לדף הראשי</a></p>
-
-		</div><!-- /content -->
-
-		<div data-role="footer">
-			<h4>בנק המופלאים</h4>
-		</div><!-- /footer -->
-	</div>
+		</div>
 
 	<!------------------------------------ form -----------------------------------------------------------------------!-->
 
@@ -169,6 +169,7 @@
 			<h4>בנק המופלאים</h4>
 		</div><!-- /footer -->
 	</div><!-- /page popup -->
+
 	<div style="display:none;" id="authTokenModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="authToken">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
