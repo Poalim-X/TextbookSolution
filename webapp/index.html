@@ -122,14 +122,14 @@
 						<input type="text" name="register-email" id="register-email" value="">
 					</div>
 					<div class="content-input">
-
 						<label for="register-password">סיסמא</label>
 						<input type="password" name="register-password" id="register-password" value="" autocomplete="off">
 					</div>
-					<div class="buttons">
-						<button type="submit" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all">הרשמה</button>
-						<a href="#bank-welcome" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">חזרה לדף הראשי</a>
-					</div>
+				</div>
+				<div class="buttons">
+					<button type="submit" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all">הרשמה</button>
+					<a href="#bank-welcome" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">חזרה לדף הראשי</a>
+				</div>
 			</form>
 		</div><!-- /content -->
 	</div>
@@ -143,14 +143,12 @@
 
 		<div role="main" class="ui-content">
 			<h2>ברוך הבא למערכת הבנק! אתה מחובר למערכת.</h2>
-			<p><a href="#bank-show-balance" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b" onclick="getBalance();">הצג
-					יתרה</a></p>
-			<p><a href="#bank-welcome" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">התנתק</a></p>
-		</div><!-- /content -->
-
-		<div data-role="footer">
-			<h4>בנק המופלאים</h4>
-		</div><!-- /footer -->
+			<div class="buttons">
+				<a href="#bank-show-balance" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b" onclick="getBalance();">הצג
+					יתרה</a>
+				<a href="#bank-welcome" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">התנתק</a></p>
+			</div><!-- /content -->
+		</div>
 	</div>
 
 	<div data-role="page" id="bank-about">
