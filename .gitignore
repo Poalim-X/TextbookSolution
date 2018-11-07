@@ -71,3 +71,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+webapp/css/style.css
+webapp/css/style.css.map
