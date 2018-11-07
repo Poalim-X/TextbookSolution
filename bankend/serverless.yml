@@ -92,8 +92,6 @@ functions:
           authorizer:
             name: authorizer
             arn: arn:aws:cognito-idp:us-east-1:519681319283:userpool/us-east-1_bwrXekQiO
-   transfermoney:
-    handler: handler.transfermoney
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
