@@ -35,7 +35,6 @@ $mobile: 767px;
         @media only screen and (max-width: $mobile) {
             margin: 5px 0;
             width: 100%;
-            width: auto;
             height: 40px;
             display: flex;
             justify-content: center;
@@ -79,6 +78,7 @@ $mobile: 767px;
         flex: 1;
         display: flex;
         justify-content: flex-start;
+        text-align: start;
     }
     .ui-input-text {
         flex: 3;
