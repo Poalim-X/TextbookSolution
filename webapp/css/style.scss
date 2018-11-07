@@ -29,13 +29,13 @@ $mobile: 767px;
         padding: 0 50px;
     }
     .ui-btn {
-        max-width: 200px;
+        width: 240px;
         margin: 0 30px;
         font-size: 20px;
         @media only screen and (max-width: $mobile) {
             margin: 5px 0;
             width: 100%;
-            max-width: none;
+            width: auto;
             height: 40px;
             display: flex;
             justify-content: center;
