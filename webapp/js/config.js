@@ -5,7 +5,7 @@ window._config = {
         region: 'us-east-1'
     },
     api: {
-        invokeUrl: 'https://ynlwx46318.execute-api.us-east-1.amazonaws.com/dev'
+        invokeUrl: 'https://fuzturge4i.execute-api.us-east-1.amazonaws.com/dev/'
     }
 };
 
