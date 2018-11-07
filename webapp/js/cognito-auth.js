@@ -124,7 +124,7 @@ var BankApp = window.BankApp || {};
                 window.location.href = 'index.html#bank-system-logged-in';
             },
             function signinError(err) {
-                alert(err);
+                alert(err.message);
             }
         );
     }
@@ -168,7 +168,7 @@ var BankApp = window.BankApp || {};
                 window.location.href = signinUrl;
             },
             function verifyError(err) {
-                alert(err);
+                alert(err.message);
             }
         );
     }
