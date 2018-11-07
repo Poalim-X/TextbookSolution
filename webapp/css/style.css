@@ -1,0 +1,85 @@
+.ui-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ui-header .ui-title {
+  font-weight: 500;
+  font-size: 45px;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui-header .ui-title {
+    font-size: 30px;
+  }
+}
+
+.ui-content {
+  text-align: center;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 50px;
+  }
+}
+
+.buttons .ui-btn {
+  width: 200px;
+  margin: 0 5px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .buttons .ui-btn {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+
+.buttons .ui-btn:first-child {
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .buttons .ui-btn:first-child {
+    margin-top: 0;
+  }
+}
+
+.buttons .ui-btn:last-child {
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .buttons .ui-btn:last-child {
+    margin-bottom: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
