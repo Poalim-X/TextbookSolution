@@ -77,11 +77,17 @@ if ((window.location.href.indexOf("bank-system-logged-in") > -1)) {
 
 }
 
-function transferMoney() {
-    fetch(`${_config.api.invokeUrl}/transfermoney`, {
-        method: 'POST',
-        headers: {
-            Authorization: authToken
-        }
-    }).then((response) => console.log('response transfermoney', response) );
+async function transferMoney() {
+    try {
+        let response = await fetch(`${_config.api.invokeUrl}/transfermoney`, {
+            method: 'POST',
+            headers: {
+                Authorization: authToken
+            }
+        });
+        console.log('response trasferMoney', response);
+    }
+    catch (e) {
+        alert(e.message); a
+    }
 }
