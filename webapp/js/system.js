@@ -85,9 +85,10 @@ async function transferMoney() {
                 Authorization: authToken
             }
         });
-        console.log('response trasferMoney', response);
+        let json = await response.json();
+        console.log('json', json);
     }
     catch (e) {
-        alert(e.message); a
+        alert(e.message);
     }
 }
