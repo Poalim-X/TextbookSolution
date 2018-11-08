@@ -31,9 +31,9 @@ function getBalance() {
         contentType: 'application/json',
         success: successGetBalance,
         error: function ajaxError(jqXHR, textStatus, errorThrown) {
-        console.error('Error requesting balance: ', textStatus, ', Details: ', errorThrown);
-        console.error('Response: ', jqXHR.responseText);
-        alert('error getting balance ' + jqXHR.responseText);
+            console.error('Error requesting balance: ', textStatus, ', Details: ', errorThrown);
+            console.error('Response: ', jqXHR.responseText);
+            alert('error getting balance ' + jqXHR.responseText);
         }
     });
 }
@@ -49,17 +49,17 @@ function successGetBalance(result) {
 function ensureUserExists() {
     console.log("ensuring user exists with token " + authToken);
     $.ajax({
-        method: 'POST',                     
-        url: _config.api.invokeUrl + "/ensureuserexists",           
+        method: 'POST',
+        url: _config.api.invokeUrl + "/ensureuserexists",
         headers: {
             Authorization: authToken
         },
         contentType: 'application/json',
         success: successEnsureUserExists,
         error: function ajaxError(jqXHR, textStatus, errorThrown) {
-        console.error('Error ensuring user exists: ', textStatus, ', Details: ', errorThrown);
-        console.error('Response: ', jqXHR.responseText);
-        alert('error ensuring user exists ' + jqXHR.responseText);
+            console.error('Error ensuring user exists: ', textStatus, ', Details: ', errorThrown);
+            console.error('Response: ', jqXHR.responseText);
+            alert('error ensuring user exists ' + jqXHR.responseText);
         }
     });
 }
@@ -71,7 +71,7 @@ function successEnsureUserExists(result) {
 }
 
 // handle auth if in system - useful when refreshing page to reload token.
-if  ((window.location.href.indexOf("bank-system-logged-in") > -1)) {
+if ((window.location.href.indexOf("bank-system-logged-in") > -1)) {
     console.log("logged in screen, loading auth creds");
     loadLoginInfo();
 
