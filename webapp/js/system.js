@@ -76,3 +76,12 @@ if ((window.location.href.indexOf("bank-system-logged-in") > -1)) {
     loadLoginInfo();
 
 }
+
+function transferMoney() {
+    fetch(`${_config.api.invokeUrl}/transfermoney`, {
+        method: 'POST',
+        headers: {
+            Authorization: authToken
+        }
+    }).then((response) => console.log('response transfermoney', response) );
+}
