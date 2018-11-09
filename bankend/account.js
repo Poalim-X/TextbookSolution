@@ -74,3 +74,12 @@ module.exports.ensure_account_exists = async (username) => {
 
     return result;
 }
+
+module.exports.getAllUsers = async (username) => {
+    var driver = getNeo4jDriver();
+    const session = driver.session();
+    const result = await session.run("MATCH (n:User) RETURN n.name");
+    session.close();
+    driver.close();
+    return result.records;
+}
