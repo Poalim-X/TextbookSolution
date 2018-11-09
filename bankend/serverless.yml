@@ -102,7 +102,7 @@ functions:
           authorizer:
             name: authorizer
             arn: arn:aws:cognito-idp:us-east-1:298509098465:userpool/us-east-1_X47k1kexW
-   getallusers:
+  getallusers:
     handler: handler.getallusers
     events:
       - http:
