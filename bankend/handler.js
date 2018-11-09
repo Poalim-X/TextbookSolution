@@ -4,8 +4,8 @@ const Account = require('./account');
 
 function getCognitoUser(event, context) {
   if (!event.requestContext.authorizer) {
-        console.log("error in auth");
-        return null;
+    console.log("error in auth");
+    return null;
   }
 
   // Because we're using a Cognito User Pools authorizer, all of the claims
@@ -18,12 +18,12 @@ function getCognitoUser(event, context) {
 
 }
 
-function buildReturnJSON(status,body) {
+function buildReturnJSON(status, body) {
   return {
     statusCode: status,
     headers: {
-        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+      "Access-Control-Allow-Origin": "*", // Required for CORS support to work
+      "Access-Control-Allow-Credentials": true // Required for cookies, authorization headers with HTTPS
     },
     body: body
   };
@@ -46,7 +46,7 @@ module.exports.getaccountbalance = async (event, context) => {
   var balance = await Account.get_balance_for_user(username);
 
   return buildReturnJSON(
-    200, 
+    200,
     JSON.stringify({
       input: event,
       username: username,
@@ -84,22 +84,20 @@ module.exports.transfermoney = async (event, context) => {
   var username = getCognitoUser(event, context);
   var account = await Account.ensure_account_exists(username);
   return buildReturnJSON(
-    200, 
+    200,
     JSON.stringify({
       input: event,
       username: username
     })
   );
+};
 
-  // module.exports.getAllUsers = async (event, context) => {
-  //   var users = Account.getAllUsers();
-  //   return buildReturnJSON(
-  //     200, 
-  //     JSON.stringify({
-  //       users: users,
-  //     })
-  //   );
-
-  
-
+module.exports.getAllUsers = async (event, context) => {
+  var users = Account.getAllUsers();
+  return buildReturnJSON(
+    200,
+    JSON.stringify({
+      users: users,
+    })
+  );
 };

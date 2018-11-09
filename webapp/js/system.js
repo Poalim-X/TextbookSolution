@@ -86,7 +86,22 @@ async function transferMoney() {
             }
         });
         let json = await response.json();
-        console.log('json', json);
+        console.log('json transferMoney', json);
+    }
+    catch (e) {
+        alert(e.message);
+    }
+}
+
+async function getAllUsers() {
+    try {
+        let response = await fetch(`${_config.api.invokeUrl}/getallusers`, {
+            headers: {
+                Authorization: authToken
+            }
+        });
+        let json = await response.json();
+        console.log('json getAllUsers', json);
     }
     catch (e) {
         alert(e.message);

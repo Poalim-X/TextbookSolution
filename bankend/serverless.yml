@@ -102,6 +102,17 @@ functions:
           authorizer:
             name: authorizer
             arn: arn:aws:cognito-idp:us-east-1:298509098465:userpool/us-east-1_X47k1kexW
+   getallusers:
+    handler: handler.getallusers
+    events:
+      - http:
+          path: getallusers
+          method: get
+          cors: true
+          authorizer:
+            name: authorizer
+            arn: arn:aws:cognito-idp:us-east-1:298509098465:userpool/us-east-1_X47k1kexW
+
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
