@@ -90,6 +90,16 @@ module.exports.transfermoney = async (event, context) => {
       username: username
     })
   );
+
+  // module.exports.getAllUsers = async (event, context) => {
+  //   var users = Account.getAllUsers();
+  //   return buildReturnJSON(
+  //     200, 
+  //     JSON.stringify({
+  //       users: users,
+  //     })
+  //   );
+
   
 
 };
