@@ -96,6 +96,7 @@ async function transferMoney() {
 async function getAllUsers() {
     try {
         let response = await fetch(`${_config.api.invokeUrl}/getallusers`, {
+            method: 'POST',
             headers: {
                 Authorization: authToken
             }

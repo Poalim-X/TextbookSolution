@@ -107,7 +107,7 @@ functions:
     events:
       - http:
           path: getallusers
-          method: get
+          method: post
           cors: true
           authorizer:
             name: authorizer
