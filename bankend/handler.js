@@ -93,11 +93,11 @@ module.exports.transfermoney = async (event, context) => {
 };
 
 module.exports.getAllUsers = async (event, context) => {
-  var users = Account.getAllUsers();
+  // var users = Account.getAllUsers();
   return buildReturnJSON(
     200,
     JSON.stringify({
-      users: users,
+      users: 'users',
     })
   );
 };
