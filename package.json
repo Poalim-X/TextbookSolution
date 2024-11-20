@@ -8,9 +8,10 @@
   },
   "dependencies": {
     "http-server": "latest",
+    "jasmine": "latest",
+    "neo4j-driver": "^5.26.0",
     "serverless": "latest",
-    "serverless-plugin-include-dependencies": "latest",
-    "jasmine": "latest"
+    "serverless-plugin-include-dependencies": "latest"
   },
   "repository": {
     "type": "git",
