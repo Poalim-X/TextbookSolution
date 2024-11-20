@@ -1,4 +1,4 @@
-var neo4j = require('neo4j-driver').v1;
+var neo4j = require('neo4j-driver');
 
 const neo4jUser = process.env.NEO4J_USER;
 const neo4jPassword = process.env.NEO4J_PASSWORD;
@@ -9,7 +9,14 @@ const INITIAL_BALANCE = 7000;
 function getNeo4jDriver()
 {
         console.log("Connecting to neo4j");
-        var driver = neo4j.driver(neo4jEndpoint, neo4j.auth.basic(neo4jUser, neo4jPassword));
+        var driver = neo4j.driver(
+		neo4jEndpoint, 
+		{
+			scheme: 'basic',
+			principal: neo4jUser, 
+			credentials: neo4jPassword
+		}
+	);
         console.log("Created neo4j driver.");
         return driver;
 }
