@@ -27,4 +27,8 @@ jobs:
       run: npm ci
       
     - name: Run tests
+      env:
+        NEO4J_USER: ${{ secrets.NEO4J_USER }}
+        NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
+        NEO4J_ENDPOINT: ${{ secrets.NEO4J_ENDPOINT }}
       run: npm test
